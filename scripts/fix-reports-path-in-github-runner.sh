@@ -5,7 +5,7 @@ defaultAbsolutePathPrefix="home/runner/work/nx-vite-react/nx-vite-react"
 absolutePathPrefix="$defaultAbsolutePathPrefix"
 
 # List of package folders
-projectFolderNames=("/apps/data-table" "/libs/common-ui")
+projectFolderNames=("apps/data-table" "libs/common-ui")
 
 # List of files to alter
 for projectFolder in "${projectFolderNames[@]}"; do
