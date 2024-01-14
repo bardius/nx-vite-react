@@ -1,0 +1,55 @@
+name: 'Unit Tests, Coverage, Linting & Sonar'
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ['main', 'develop']
+  pull_request:
+    branches: ['main', 'develop']
+    types: ['opened', 'reopened', 'synchronize']
+
+env:
+  NODE_OPTIONS: "--no-warnings"
+
+jobs:
+  build:
+    name: 'Unit Tests, Coverage, Linting & Sonar'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+
+      - name: Install dependencies
+        env:
+          HUSKY: 0
+        run: |
+          npm run setup:ci
+
+      - name: Execute unit tests
+        run: |
+          npm run test:ci
+
+      - name: Execute linting check
+        run: |
+          npm run lint:ci
+          npm run lint:styles:ci
+
+      - name: Fix filesystem paths in generated reports
+        run: |
+          ./scripts/fix-reports-path-in-github-runner.sh
+
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+

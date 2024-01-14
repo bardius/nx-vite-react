@@ -1,0 +1,23 @@
+{
+  "name": "@bardius/data-table",
+  "version": "0.0.0",
+  "author": "George Bardis",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bardius/nx-vite-react/issues"
+  },
+  "homepage": "https://github.com/bardius/nx-vite-react/blob/main/#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bardius/nx-vite-react.git"
+  },
+  "private": true,
+  "scripts": {
+    "clean": "rimraf -rf ./reports",
+    "check:circular": "madge --circular --extensions js,ts src || exit 0",
+    "check:duplicates": "jscpd src",
+    "lint:styles": "npx stylelint -f verbose \"src/**/*.scss\"",
+    "lint:styles:ci": "npx stylelint -f json --output-file reports/stylelint.json \"src/**/*.scss\"",
+    "lint:styles:fix": "npx stylelint --fix \"src/**/*.scss\""
+  }
+}
