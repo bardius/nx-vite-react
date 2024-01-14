@@ -1,0 +1,37 @@
+{
+  "name": "data-table-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/data-table-e2e/src",
+  "targets": {
+    "e2e": {
+      "executor": "@nx/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/data-table-e2e/cypress.config.ts",
+        "testingType": "e2e",
+        "devServerTarget": "data-table:serve"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "data-table:serve:production"
+        },
+        "ci": {
+          "devServerTarget": "data-table:serve-static"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "configurations": {
+        "ci": {
+          "force": true,
+          "outputFile": "apps/data-table-e2e/reports/eslint.json",
+          "format": "json"
+        }
+      }
+    }
+  },
+  "implicitDependencies": ["data-table"],
+  "tags": []
+}

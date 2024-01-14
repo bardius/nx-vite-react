@@ -1,0 +1,56 @@
+{
+  "root": true,
+  "ignorePatterns": ["**/*"],
+  "plugins": ["@nx"],
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "jest": true
+  },
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "rules": {
+        "@nx/enforce-module-boundaries": [
+          "error",
+          {
+            "enforceBuildableLibDependency": true,
+            "allow": [],
+            "depConstraints": [
+              {
+                "sourceTag": "*",
+                "onlyDependOnLibsWithTags": ["*"]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "files": ["*.ts", "*.tsx"],
+      "extends": [
+        "plugin:@nx/typescript",
+        "plugin:sonarjs/recommended",
+        "prettier",
+        "plugin:compat/recommended"
+      ],
+      "plugins": ["@typescript-eslint", "unicorn", "compat", "@nx"],
+      "rules": {
+        "compat/compat": ["warn", "defaults"]
+      }
+    },
+    {
+      "files": ["*.js", "*.jsx"],
+      "extends": [
+        "plugin:@nx/javascript",
+        "plugin:sonarjs/recommended",
+        "prettier",
+        "plugin:compat/recommended"
+      ],
+      "plugins": ["unicorn", "compat", "@nx"],
+      "rules": {
+        "compat/compat": ["warn", "defaults"]
+      }
+    }
+  ]
+}
