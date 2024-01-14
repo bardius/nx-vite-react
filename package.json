@@ -126,6 +126,8 @@
     "vitest": "~0.34.6"
   },
   "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "4.9.5",
+    "@rollup/rollup-win32-x64-msvc": "4.9.5",
     "@nx/nx-darwin-arm64": "17.2.8",
     "@nx/nx-darwin-x64": "17.2.8",
     "@nx/nx-linux-x64-gnu": "17.2.8",
