@@ -1,9 +1,9 @@
-import NxWelcome from '../app/nx-welcome';
+import { Text } from '@salt-ds/core';
 
 const HomePage = () => {
   return (
-    <div>
-      <NxWelcome title='data-table' />
+    <div data-testid={'page'}>
+      <Text>Welcome data-table</Text>
     </div>
   );
 };

@@ -31,7 +31,7 @@
     "check:security": "npm audit --recursive --audit-level=high",
     "format": "prettier --write .",
     "lint:fix": "eslint . --fix",
-    "test": "nx run-many -t test",
+    "test": "nx run-many -t test --verbose",
     "test:ci": "nx run-many -t test --parallel=false --configuration=ci --runInBand --maxWorkers=1 --forceExit",
     "e2e": "nx run-many -t e2e",
     "graph": "nx graph",
@@ -40,11 +40,18 @@
     "storybook:test": "nx run common-ui:test-storybook"
   },
   "dependencies": {
+    "@fontsource/open-sans": "^5.0.22",
+    "@fontsource/pt-mono": "^5.0.8",
+    "@salt-ds/core": "^1.13.4",
+    "@salt-ds/icons": "^1.9.1",
+    "@salt-ds/lab": "^1.0.0-alpha.26",
+    "@salt-ds/theme": "^1.11.0",
     "@swc/helpers": "~0.5.2",
     "msw": "^2.0.14",
     "ramda": "^0.29.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-error-boundary": "^4.0.12",
     "react-router-dom": "^6.21.2",
     "tslib": "^2.3.0"
   },
@@ -70,6 +77,7 @@
     "@storybook/addon-links": "^7.6.8",
     "@storybook/addon-mdx-gfm": "^7.6.8",
     "@storybook/addon-storysource": "^7.6.8",
+    "@storybook/addons": "^7.6.8",
     "@storybook/core-server": "^7.5.3",
     "@storybook/jest": "^0.2.3",
     "@storybook/react-vite": "^7.5.3",
@@ -126,12 +134,12 @@
     "vitest": "~0.34.6"
   },
   "optionalDependencies": {
-    "@rollup/rollup-linux-x64-gnu": "4.9.5",
-    "@rollup/rollup-win32-x64-msvc": "4.9.5",
     "@nx/nx-darwin-arm64": "17.2.8",
     "@nx/nx-darwin-x64": "17.2.8",
     "@nx/nx-linux-x64-gnu": "17.2.8",
-    "@nx/nx-win32-x64-msvc": "17.2.8"
+    "@nx/nx-win32-x64-msvc": "17.2.8",
+    "@rollup/rollup-linux-x64-gnu": "4.9.5",
+    "@rollup/rollup-win32-x64-msvc": "4.9.5"
   },
   "lint-staged": {
     "*.{json,md,ts,tsx,sass,css}": "prettier --write"
