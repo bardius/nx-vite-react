@@ -94,10 +94,10 @@ export const parameters: Parameters = {
     container: ({ children, context, ...rest }: ComponentProps<typeof DocsContainer>) => (
       <DocsContainer context={context} {...rest}>
         <SaltProvider
-          /* @ts-ignore Waiting for https://github.com/storybookjs/storybook/issues/12982 */
+          /* @ts-expect-error Waiting for https://github.com/storybookjs/storybook/issues/12982 */
           mode={context.store.globals.globals?.mode}
           enableStyleInjection={
-            /* @ts-ignore Waiting for https://github.com/storybookjs/storybook/issues/12982 */
+            /* @ts-expect-error Waiting for https://github.com/storybookjs/storybook/issues/12982 */
             context.store.globals.globals?.styleInjection === 'enable'
           }>
           {children}

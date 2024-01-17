@@ -20,7 +20,7 @@ nav {
   background-color: var(--salt-container-primary-background);
   z-index: calc(var(--salt-zIndex-drawer) + 1);
   position: fixed;
-  inset: 0 0 auto 0;
+  inset: 0 0 auto;
   padding-right: 1em;
   border-bottom: var(--salt-size-border) var(--salt-container-borderStyle) var(--salt-container-secondary-borderColor);
 }
@@ -39,7 +39,7 @@ nav {
   padding-right: 1em;
   background-color: var(--salt-container-primary-background);
   position: fixed;
-  inset: 0 0 auto 0;
+  inset: 0 0 auto;
   border-bottom: var(--salt-size-border) var(--salt-container-borderStyle) var(--salt-container-secondary-borderColor);
 }
 
