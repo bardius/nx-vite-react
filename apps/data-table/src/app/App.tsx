@@ -1,29 +1,13 @@
-import { Outlet, NavLink } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
+import { AppLayout } from '@bardius/common-ui';
+import { headerNavItems } from '../constants/navigation';
 
 const App = () => {
   return (
-    <div id='app' data-testId='app'>
-      <div>Header</div>
-      <div id='sidebar'>
-        <nav>
-          <ul>
-            <li>
-              <NavLink
-                to={`home`}
-                className={({ isActive, isPending }) =>
-                  isActive ? 'active' : isPending ? 'pending' : ''
-                }>
-                Home
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to={`error`}>Error</NavLink>
-            </li>
-          </ul>
-        </nav>
-      </div>
-      <Outlet />
-      <div>Footer</div>
+    <div id='app' data-testid='app'>
+      <AppLayout headerNavItems={headerNavItems}>
+        <Outlet />
+      </AppLayout>
     </div>
   );
 };
