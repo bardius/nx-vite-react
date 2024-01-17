@@ -1,7 +1,6 @@
 import { screen, render } from '@testing-library/react';
 import { AppHeader, NavigationItem } from './appHeader';
 import { BrowserRouter } from 'react-router-dom';
-import { useResponsiveProp } from '@salt-ds/core';
 
 jest.mock('@salt-ds/core', () => ({
   ...jest.requireActual('@salt-ds/core'),

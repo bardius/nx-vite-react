@@ -15,6 +15,43 @@ nav {
   z-index: var(--salt-zIndex-appHeader);
 }
 
+.header-app-container {
+  width: 100%;
+  background-color: var(--salt-container-primary-background);
+  z-index: calc(var(--salt-zIndex-drawer) + 1);
+  position: fixed;
+  inset: 0 0 auto 0;
+  padding-right: 1em;
+  border-bottom: var(--salt-size-border) var(--salt-container-borderStyle) var(--salt-container-secondary-borderColor);
+}
+
+.header-app-mobile-content {
+  justify-content: center;
+  display: flex;
+  height: calc(var(--salt-size-base) + var(--salt-spacing-200));
+  width: calc(var(--salt-size-base) + var(--salt-spacing-200));
+  border-right: var(--salt-size-border) var(--salt-container-borderStyle) var(--salt-container-secondary-borderColor);
+}
+
+.header-app-content {
+  height: calc(var(--salt-size-base) + var(--salt-spacing-200));
+  padding-left: 1em;
+  padding-right: 1em;
+  background-color: var(--salt-container-primary-background);
+  position: fixed;
+  inset: 0 0 auto 0;
+  border-bottom: var(--salt-size-border) var(--salt-container-borderStyle) var(--salt-container-secondary-borderColor);
+}
+
+.header-app-mobile-menu-btn {
+  align-self: center;
+}
+
+.app-mobile-menu-drawer {
+  padding-top: calc(var(--salt-size-base) + var(--salt-spacing-200));
+  padding-left: 0;
+}
+
 .horizontal,
 .vertical {
   display: flex;

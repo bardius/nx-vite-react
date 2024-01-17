@@ -1,3 +1,4 @@
+export * from './lib/appLogo/appLogo';
 export * from './lib/appFooter/appFooter';
 export * from './lib/appError/appError';
 export * from './lib/appLayout/appLayout';

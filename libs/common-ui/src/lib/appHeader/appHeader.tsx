@@ -1,18 +1,11 @@
 import { FC, HTMLAttributes, useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import {
-  Button,
-  FlexItem,
-  FlexLayout,
-  Link,
-  StackLayout,
-  useResponsiveProp,
-  Text,
-} from '@salt-ds/core';
+import { Button, FlexItem, FlexLayout, StackLayout, useResponsiveProp } from '@salt-ds/core';
 import { CloseIcon, MenuIcon } from '@salt-ds/icons';
-import { Drawer, Logo, LogoSeparator, NavigationItem } from '@salt-ds/lab';
+import { Drawer, NavigationItem } from '@salt-ds/lab';
 
 import styles from './appHeader.module.scss';
+import { AppLogo } from '../appLogo/appLogo';
 
 export interface NavigationItem {
   id: string;
@@ -34,33 +27,12 @@ const AppHeader: FC<AppHeaderProps> = ({ items }) => {
       {isMobile ? (
         // Mobile Header
         <>
-          <StackLayout
-            direction='row'
-            style={{
-              width: '100%',
-              backgroundColor: 'var(--salt-container-primary-background)',
-              zIndex: 'calc(var(--salt-zIndex-drawer) + 1)',
-              position: 'fixed',
-              inset: '0 0 auto 0',
-              paddingRight: '1em',
-              borderBottom:
-                'var(--salt-size-border) var(--salt-container-borderStyle) var(--salt-container-secondary-borderColor)',
-            }}>
-            <FlexItem
-              style={{
-                justifyContent: 'center',
-                display: 'flex',
-                height: 'calc(var(--salt-size-base) + var(--salt-spacing-200))',
-                width: 'calc(var(--salt-size-base) + var(--salt-spacing-200))',
-                borderRight:
-                  'var(--salt-size-border) var(--salt-container-borderStyle) var(--salt-container-secondary-borderColor)',
-              }}>
+          <StackLayout className={styles['header-app-container']} direction='row'>
+            <FlexItem className={styles['header-app-mobile-content']}>
               {!drawerOpen && (
                 <Button
                   onClick={() => setDrawerOpen(true)}
-                  style={{
-                    alignSelf: 'center',
-                  }}
+                  className={styles['header-app-mobile-menu-btn']}
                   variant='secondary'>
                   <MenuIcon />
                 </Button>
@@ -69,29 +41,18 @@ const AppHeader: FC<AppHeaderProps> = ({ items }) => {
               {drawerOpen && (
                 <Button
                   onClick={() => setDrawerOpen(false)}
-                  style={{
-                    alignSelf: 'center',
-                  }}
+                  className={styles['header-app-mobile-menu-btn']}
                   variant='secondary'>
                   <CloseIcon />
                 </Button>
               )}
             </FlexItem>
             <FlexItem align='center'>
-              <Link href=''>
-                <Logo>
-                  LOGO
-                  <LogoSeparator />
-                  <Text>App title</Text>
-                </Logo>
-              </Link>
+              <AppLogo />
             </FlexItem>
           </StackLayout>
           <Drawer
-            style={{
-              paddingTop: 'calc(var(--salt-size-base) + var(--salt-spacing-200))',
-              paddingLeft: '0',
-            }}
+            className={styles['app-mobile-menu-drawer']}
             open={drawerOpen}
             onOpenChange={() => {
               if (drawerOpen) {
@@ -126,27 +87,9 @@ const AppHeader: FC<AppHeaderProps> = ({ items }) => {
         </>
       ) : (
         // Desktop Header
-        <FlexLayout
-          style={{
-            height: 'calc(var(--salt-size-base) + var(--salt-spacing-200))',
-            paddingLeft: '1em',
-            paddingRight: '1em',
-            backgroundColor: 'var(--salt-container-primary-background)',
-            position: 'fixed',
-            inset: '0 0 auto 0',
-            borderBottom:
-              'var(--salt-size-border) var(--salt-container-borderStyle) var(--salt-container-secondary-borderColor)',
-          }}
-          justify='space-between'
-          gap={3}>
+        <FlexLayout className={styles['header-app-content']} justify='space-between' gap={3}>
           <FlexItem align='center'>
-            <Link href=''>
-              <Logo>
-                LOGO
-                <LogoSeparator />
-                <Text>App title</Text>
-              </Logo>
-            </Link>
+            <AppLogo />
           </FlexItem>
           {items && (
             <nav data-testid={'desktop-navigation'}>
