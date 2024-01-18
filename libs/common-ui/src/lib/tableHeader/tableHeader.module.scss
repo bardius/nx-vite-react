@@ -26,10 +26,7 @@
   line-height: var(--grid-row-height);
   padding: var(--grid-cell-padding);
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  inset: 0;
   overflow: hidden;
   text-overflow: ellipsis;
   font-weight: var(--salt-text-label-fontWeight-strong);
@@ -45,24 +42,3 @@
   top: var(--grid-separatorGap);
   bottom: var(--grid-separatorGap);
 }
-
-//.saltGridHeaderCell-alignLeftWithSortOrder {
-//  margin-right: calc(var(--salt-size-unit) * 2);
-//}
-//
-//.saltGridHeaderCell-sortable {
-//  cursor: pointer;
-//}
-//
-//.saltGridHeaderCell-sortingIcon {
-//  display: flex;
-//  margin: 0 var(--salt-size-unit);
-//}
-//
-//.saltGridHeaderCell-sortingIconStart {
-//  justify-content: start;
-//}
-//
-//.saltGridHeaderCell-sortingIconEnd {
-//  justify-content: end;
-//}

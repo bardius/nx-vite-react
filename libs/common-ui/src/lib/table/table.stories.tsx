@@ -11,6 +11,7 @@ const meta: Meta<typeof Table> = {
 
 export default meta;
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 type Story = StoryObj<typeof Table>;
 
 export const Default = {
