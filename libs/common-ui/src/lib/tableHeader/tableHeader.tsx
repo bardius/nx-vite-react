@@ -12,7 +12,8 @@ import {
 
 import styles from './tableHeader.module.scss';
 
-export interface ColumnConfig<T = unknown> {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export interface ColumnConfig<T = any> {
   // Unique key for retrieving value from dataset
   dataKey: string;
   // Title to display in column head

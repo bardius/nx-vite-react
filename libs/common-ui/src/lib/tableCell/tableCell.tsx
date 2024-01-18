@@ -7,7 +7,7 @@ import styles from './tableCell.module.scss';
 export type ErrorLogger = (error: Error, info: ErrorInfo) => void;
 export type CellRenderer<T> = (data?: T) => ReactNode;
 
-export interface TableCellProps<T = unknown> {
+export interface TableCellProps<T = never> {
   // Optional custom renderer for cell value
   cellRenderer?: CellRenderer<T>;
   // Cell data
@@ -16,9 +16,11 @@ export interface TableCellProps<T = unknown> {
   logger?: ErrorLogger;
   // Unique data test id
   dataTestId?: string;
+  customClassName?: string;
 }
 
-const defaultCellRenderer: CellRenderer<unknown> = (data?: unknown) => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const defaultCellRenderer: CellRenderer<any> = (data?: any) => {
   const displayedValue = data ? data.toString() : '';
   return (
     <>
@@ -43,9 +45,10 @@ const TableCell: FC<TableCellProps> = ({
   data,
   dataTestId,
   logger = defaultErrorLogger,
+  customClassName,
 }) => {
   return (
-    <td className={styles['saltGridCell']} data-testid={dataTestId}>
+    <td className={`${styles['saltGridCell']} ${customClassName}`} data-testid={dataTestId}>
       <ErrorBoundary fallbackRender={defaultErrorRenderer} onError={logger}>
         {cellRenderer(data)}
       </ErrorBoundary>

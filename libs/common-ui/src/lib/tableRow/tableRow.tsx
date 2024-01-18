@@ -5,12 +5,14 @@ import { CellRenderer, ErrorLogger, TableCell } from '../tableCell/tableCell';
 import styles from './tableRow.module.scss';
 
 export interface RowData {
-  [key: string]: unknown;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  [key: string]: any;
 }
 
 export interface RowConfig {
   [key: string]: {
-    cellRenderer?: CellRenderer<unknown>;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    cellRenderer?: CellRenderer<any>;
     logger?: ErrorLogger;
   };
 }

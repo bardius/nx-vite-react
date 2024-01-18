@@ -20,10 +20,10 @@
   border-style: solid;
   border-width: 1px;
   border-color: transparent;
-  padding: var(--grid-cell-padding);
-  color: inherit !important;
 
   --grid-cell-padding: 0 calc(var(--grid-padding) - 1px);
+
+  padding: var(--grid-cell-padding);
 }
 
 .saltGridCell-columnSeparator {
@@ -42,4 +42,12 @@
   left: 0;
   height: 1px;
   background-color: var(--grid-row-borderColor);
+}
+
+.text-red {
+  color: var(--salt-color-red-100);
+}
+
+.text-blue {
+  color: var(--salt-color-blue-100);
 }

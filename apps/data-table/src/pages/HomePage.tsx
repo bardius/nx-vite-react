@@ -1,7 +1,9 @@
 import { Text } from '@salt-ds/core';
-import { SortBy, Table } from '@bardius/common-ui';
+import { SortBy, Table, TableConfig } from '@bardius/common-ui';
+import { priceCellRenderer } from '../components/table/cellRenderers';
+import { assetClassRowRenderer } from '../components/table/rowRenderers';
 
-const config = {
+const config: TableConfig = {
   columns: [
     {
       dataKey: 'ticker',
@@ -16,6 +18,7 @@ const config = {
       actions: {
         sorting: true,
       },
+      cellRenderer: priceCellRenderer,
     },
     {
       dataKey: 'assetClass',
@@ -25,6 +28,7 @@ const config = {
       },
     },
   ],
+  rowRenderer: assetClassRowRenderer,
   onSortByChange: console.log,
 };
 
@@ -38,8 +42,20 @@ const data = [
   {
     uniqueDataRowId: 2,
     ticker: 'BETA',
-    price: 3791.37,
+    price: -3791.37,
     assetClass: 'Equities',
+  },
+  {
+    uniqueDataRowId: 3,
+    ticker: 'GAMMA',
+    price: 0,
+    assetClass: 'Macro',
+  },
+  {
+    uniqueDataRowId: 4,
+    ticker: 'Delta',
+    price: null,
+    assetClass: 'undefined',
   },
 ];
 

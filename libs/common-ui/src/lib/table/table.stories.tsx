@@ -52,8 +52,20 @@ export const Default = {
       {
         uniqueDataRowId: 2,
         ticker: 'BETA',
-        price: 3791.37,
+        price: -3791.37,
         assetClass: 'Equities',
+      },
+      {
+        uniqueDataRowId: 3,
+        ticker: 'GAMMA',
+        price: 0,
+        assetClass: 'Macro',
+      },
+      {
+        uniqueDataRowId: 4,
+        ticker: 'Delta',
+        price: null,
+        assetClass: 'undefined',
       },
     ],
     sortBy: [{ priority: 0, dataKey: 'ticker', order: 'ASC' }],
