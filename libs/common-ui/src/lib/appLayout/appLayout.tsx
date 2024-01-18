@@ -9,21 +9,17 @@ import styles from './appLayout.module.scss';
 
 export interface AppLayoutProps {
   headerNavItems?: NavigationItem[];
+  logger?: (error: Error, info: ErrorInfo) => void;
 }
 
-// TODO: split logger into separate file
-const logError = (error: Error, info: ErrorInfo) => {
-  // Do something with the error, e.g. log to an external API
-};
-
-const AppLayout: FC<PropsWithChildren<AppLayoutProps>> = ({ children, headerNavItems }) => {
+const AppLayout: FC<PropsWithChildren<AppLayoutProps>> = ({ children, headerNavItems, logger }) => {
   return (
     <BorderLayout data-testid={'app-layout'}>
       <BorderItem position='north'>
         <AppHeader items={headerNavItems} />
       </BorderItem>
       <BorderItem position='center'>
-        <ErrorBoundary fallbackRender={AppError} onError={logError}>
+        <ErrorBoundary fallbackRender={AppError} onError={logger}>
           <FlexLayout className={styles['container-page']} align='center' justify={'center'}>
             <FlexItem align='center'>{children}</FlexItem>
           </FlexLayout>

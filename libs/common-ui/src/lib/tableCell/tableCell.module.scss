@@ -1,7 +1,46 @@
-/*
- * Replace this with your own classes
- *
- * e.g.
- * .container {
- * }
-*/
+.saltGridCell {
+  position: relative;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  font-size: var(--grid-fontSize);
+  font-weight: 400;
+  outline: 0;
+  border-right: 1px;
+}
+
+.saltGridBaseCell-valueContainer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: calc(var(--grid-row-height) - 2px);
+  border-style: solid;
+  border-width: 1px;
+  border-color: transparent;
+  --grid-cell-padding: 0 calc(var(--grid-padding) - 1px);
+  padding: var(--grid-cell-padding);
+}
+
+.saltGridCell-columnSeparator {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 1px;
+  background-color: var(--grid-row-background);
+}
+
+.saltGridCell-rowSeparator {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 1px;
+  background-color: var(--grid-row-borderColor);
+}
