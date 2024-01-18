@@ -54,7 +54,6 @@ body {
   --grid-cornerTag-size-default: 8px;
 }
 
-/* Styles applied to the root element */
 .saltGrid {
   --grid-row-height: var(--saltGrid-row-height, var(--grid-row-height-default));
   --grid-padding: var(--saltGrid-padding, var(--grid-padding-default));
@@ -66,9 +65,7 @@ body {
     --saltGrid-groupHeader-fontWeight,
     var(--salt-text-label-fontWeight-strong)
   );
-
   --grid-cell-padding: 0 var(--grid-padding);
-
   --grid-background-primary: var(
     --saltGrid-background-primary,
     var(--salt-container-primary-background)
@@ -78,7 +75,6 @@ body {
     var(--salt-container-secondary-background)
   );
   --grid-zebraColor: var(--saltGrid-zebraColor, var(--salt-container-secondary-background));
-
   --grid-row-background-hover: var(
     --saltGrid-row-background-hover,
     var(--salt-selectable-background-hover)
@@ -87,7 +83,6 @@ body {
     --saltGrid-row-background-selected,
     var(--salt-selectable-background-selected)
   );
-
   --grid-row-borderColor-selected: var(
     --saltGrid-row-borderColor-selected,
     var(--salt-selectable-borderColor-selected)
@@ -116,9 +111,7 @@ body {
     --saltGrid-editableCell-cornerTag-size,
     var(--grid-cornerTag-size-default)
   );
-
   --grid-header-color: var(--saltGrid-header-color, var(--salt-content-secondary-foreground));
-
   --grid-headerColumnSeparator-color: var(
     --saltGrid-headerColumnSeparator-color,
     var(--salt-separable-tertiary-borderColor)
@@ -133,7 +126,6 @@ body {
     --saltGrid-groupHeaderRowSeparator-color,
     var(--salt-separable-tertiary-borderColor)
   );
-
   --grid-groupHeader-color: var(
     --saltGrid-groupHeader-color,
     var(--salt-content-secondary-foreground)
@@ -147,7 +139,6 @@ body {
   --grid-cursor-border-width: var(--saltGrid-cursor-borderWidth, var(--salt-focused-outlineWidth));
   --grid-cursor-borderColor: var(--saltGrid-cursor-borderColor, var(--salt-focused-outlineColor));
   --grid-borderColor: var(--saltGrid-borderColor, var(--salt-container-secondary-borderColor));
-
   --grid-rowSeparator-width: 1px;
   --grid-rowSeparator-color: var(
     --saltGrid-rowSeparator-color,
@@ -161,12 +152,10 @@ body {
     --saltGrid-rowSeparator-color-divided,
     var(--salt-separable-secondary-borderColor)
   );
-
   --grid-pinnedSeparator-color: var(
     --saltGrid-pinnedSeparator-color,
     var(--salt-separable-primary-borderColor)
   );
-
   --grid-columnGhost-borderColor: var(
     --saltGrid-columnGhost-borderColor,
     var(--salt-palette-interact-border-hover)
@@ -176,7 +165,6 @@ body {
     --saltGrid-columnGhost-boxShadow,
     var(--salt-overlayable-shadow-drag)
   );
-
   --grid-mid-body-zIndex: 0;
   --grid-left-body-zIndex: 1;
   --grid-right-body-zIndex: 1;

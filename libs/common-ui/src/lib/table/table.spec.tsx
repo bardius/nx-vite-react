@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { Table, TableConfig } from './table';
-import { SortBy } from '../tableHeader/tableHeader';
 import { RowData } from '../tableRow/tableRow';
+import { SortBy } from '../tableHeaderActions/tableHeaderActions';
 
 const dummyConfig: TableConfig = {
   columns: [

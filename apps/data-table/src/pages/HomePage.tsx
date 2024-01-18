@@ -25,6 +25,7 @@ const config = {
       },
     },
   ],
+  onSortByChange: console.log,
 };
 
 const data = [
@@ -42,7 +43,10 @@ const data = [
   },
 ];
 
-const sortBy = [{ priority: 0, dataKey: 'ticker', order: 'ASC' } as SortBy];
+const sortBy = [
+  { priority: 0, dataKey: 'ticker', order: 'ASC' } as SortBy,
+  { priority: 0, dataKey: 'price', order: 'DESC' } as SortBy,
+];
 
 const HomePage = () => {
   return (

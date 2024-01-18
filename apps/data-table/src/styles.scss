@@ -58,7 +58,6 @@ body {
   --grid-cornerTag-size-default: 8px;
 }
 
-/* Styles applied to the root element */
 .saltGrid {
   --grid-row-height: var(--saltGrid-row-height, var(--grid-row-height-default));
   --grid-padding: var(--saltGrid-padding, var(--grid-padding-default));

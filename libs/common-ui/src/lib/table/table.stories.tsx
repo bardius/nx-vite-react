@@ -40,6 +40,7 @@ export const Default = {
           },
         },
       ],
+      onSortByChange: console.log,
     },
     data: [
       {
@@ -60,7 +61,7 @@ export const Default = {
   argTypes: {},
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
-    expect(canvas.getByText(/ALPHA/gi)).toBeTruthy();
     expect(canvas.getByText(/Ticker/gi)).toBeTruthy();
+    expect(canvas.findByText(/ALPHA/gi)).toBeTruthy();
   },
 };

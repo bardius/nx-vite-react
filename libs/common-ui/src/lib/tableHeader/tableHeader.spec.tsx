@@ -1,5 +1,6 @@
 import { render } from '@testing-library/react';
-import { ColumnConfig, SortBy, TableHeader } from './tableHeader';
+import { ColumnConfig, TableHeader } from './tableHeader';
+import { SortBy } from '../tableHeaderActions/tableHeaderActions';
 
 const dummyConfig: ColumnConfig[] = [
   {

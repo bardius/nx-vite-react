@@ -28,6 +28,11 @@ const config: StorybookConfig = {
   viteFinal: async config =>
     mergeConfig(config, {
       plugins: [nxViteTsPaths()],
+      server: {
+        fs: {
+          strict: false,
+        },
+      },
     }),
 };
 

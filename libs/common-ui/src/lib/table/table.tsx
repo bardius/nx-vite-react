@@ -1,5 +1,6 @@
 import { FC, useEffect, useState } from 'react';
-import { ColumnConfig, SortBy, TableHeader } from '../tableHeader/tableHeader';
+import { ColumnConfig, TableHeader } from '../tableHeader/tableHeader';
+import { SortBy, SortByActionOnChange } from '../tableHeaderActions/tableHeaderActions';
 import {
   defaultUniqueRowIdKeyName,
   RowConfig,
@@ -18,7 +19,7 @@ export interface TableConfig<T = RowData> {
   // Dataset keyName that signifies a unique rowData id. Default is "uniqueDataRowId"
   uniqueRowIdKeyName?: string;
   // Callback to invoke when sortBy action is triggered
-  onSortByChange?: (sortBy: SortBy[]) => void;
+  onSortByChange?: SortByActionOnChange;
 }
 
 export interface TableProps<T = RowData> {

@@ -1,3 +1,4 @@
+export * from './lib/tableHeaderActions/tableHeaderActions';
 export * from './lib/table/table';
 export * from './lib/appLogo/appLogo';
 export * from './lib/appFooter/appFooter';
