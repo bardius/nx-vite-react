@@ -1,7 +1,10 @@
-/*
- * Replace this with your own classes
- *
- * e.g.
- * .container {
- * }
-*/
+.saltGridTableRow {
+  height: var(--grid-row-height);
+
+  --grid-row-borderColor: var(--grid-rowSeparator-color);
+  --grid-row-background: var(--grid-background);
+
+  border-color: var(--grid-headerRowSeparator-color);
+  border-width: 0 0 calc(var(--grid-headerRowSeparator-height) * 2) 0;
+}
+

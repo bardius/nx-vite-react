@@ -1,0 +1,11 @@
+.saltGrid {
+  position: relative;
+  outline: none;
+  user-select: none;
+  background: var(--grid-background);
+}
+
+.saltGrid table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
