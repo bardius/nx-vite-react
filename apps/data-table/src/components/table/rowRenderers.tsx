@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactElement } from 'react';
 import { defaultUniqueRowIdKeyName, RowRenderer, TableCell } from '@bardius/common-ui';
 
 import styles from './rowRenderers.module.scss';
@@ -21,7 +21,7 @@ const assetClassRowRenderer: RowRenderer = (
   rowData,
   uniqueRowIdKeyName: string = defaultUniqueRowIdKeyName,
 ) => {
-  const tableCells: ReactNode[] = [];
+  const tableCells: ReactElement[] = [];
 
   for (const [columnKey, cellValue] of Object.entries(rowData)) {
     if (columnKey !== uniqueRowIdKeyName) {

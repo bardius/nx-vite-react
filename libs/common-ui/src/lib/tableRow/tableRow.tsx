@@ -1,4 +1,4 @@
-import { FC, ReactNode } from 'react';
+import { FC, ReactElement } from 'react';
 import { isEmpty } from 'ramda';
 import { CellRenderer, ErrorLogger, TableCell } from '../tableCell/tableCell';
 
@@ -22,7 +22,7 @@ export type RowRenderer<T = RowData> = (
   rowData: T,
   uniqueRowIdKeyName?: string,
   logger?: ErrorLogger,
-) => ReactNode[];
+) => ReactElement[];
 
 export interface TableRowProps<T = RowData> {
   // optional custom row renderer
@@ -42,7 +42,7 @@ const defaultRowRenderer: RowRenderer = (
   rowData,
   uniqueRowIdKeyName: string = defaultUniqueRowIdKeyName,
 ) => {
-  const tableCells: ReactNode[] = [];
+  const tableCells: ReactElement[] = [];
 
   for (const [columnKey, cellValue] of Object.entries(rowData)) {
     if (columnKey !== uniqueRowIdKeyName) {

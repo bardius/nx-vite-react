@@ -7,9 +7,7 @@ const priceCellRenderer: CellRenderer<number | undefined> = data => {
   const displayedValue =
     typeof data !== 'number'
       ? ''
-      : new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(
-          data as number,
-        );
+      : new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(data);
 
   const textColorClassName = data && data < 0 ? 'text-red' : 'text-blue';
 

@@ -1,11 +1,11 @@
-import { ErrorInfo, FC, ReactNode } from 'react';
+import { ErrorInfo, FC, ReactElement } from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
 import { Text } from '@salt-ds/core';
 
 import styles from './tableCell.module.scss';
 
 export type ErrorLogger = (error: Error, info: ErrorInfo) => void;
-export type CellRenderer<T> = (data?: T) => ReactNode;
+export type CellRenderer<T> = (data?: T) => ReactElement;
 
 export interface TableCellProps<T = never> {
   // Optional custom renderer for cell value
