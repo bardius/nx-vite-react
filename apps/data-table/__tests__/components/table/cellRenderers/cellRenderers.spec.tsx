@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import { priceCellRenderer } from './cellRenderers';
+import { priceCellRenderer } from '../../../../src/components/table/cellRenderers/cellRenderers';
 
 describe('Cell Renderers', () => {
   describe('Price Cell Render', () => {

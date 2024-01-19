@@ -1,15 +1,8 @@
 import { useEffect, useState } from 'react';
 import sampleData from '../../__fixtures__/sampleData.json';
+import { FinancialInstrumentsData } from '../components/financialInstrumentsTable/financialInstrumentsTable';
 
-export type AssetClassData = {
-  uniqueDataRowId?: number;
-  ticker: string;
-  price: number | null;
-  assetClass: string;
-};
-
-// TODO: get from msw mocked request instead of json and move dummy to unit tests
-const dataDummy: AssetClassData[] = [
+const dataDummy: FinancialInstrumentsData[] = [
   {
     uniqueDataRowId: 1,
     ticker: 'ALPHA2',
@@ -54,8 +47,10 @@ const dataDummy: AssetClassData[] = [
   },
 ].concat(sampleData as never[]);
 
-const useDummyData = (): AssetClassData[] => {
-  const [data, setData] = useState<AssetClassData[]>([]);
+// TODO: get from msw mocked request instead of json file import
+// Hook to provide dummy financial instruments data
+const useDummyData = (): FinancialInstrumentsData[] => {
+  const [data, setData] = useState<FinancialInstrumentsData[]>([]);
 
   useEffect(() => {
     setData(dataDummy);

@@ -18,6 +18,7 @@ export interface AppHeaderProps extends HTMLAttributes<HTMLElement> {
   items?: NavigationItem[];
 }
 
+// Header with Logo and config driven responsive navigation
 const AppHeader: FC<AppHeaderProps> = ({ items }) => {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const isMobile = useResponsiveProp({ xs: true, sm: false }, false);

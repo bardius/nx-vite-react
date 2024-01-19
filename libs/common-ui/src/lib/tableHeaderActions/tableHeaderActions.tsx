@@ -69,7 +69,11 @@ const TableHeaderActions: FC<TableHeaderActionsProps> = ({ columnConfig, actions
   return (
     <div className={styles['saltGridHeaderCell-actions']}>
       {shouldShowSorting && (
-        <Button variant='secondary' onClick={sortingCallback} title={'Sort Column'}>
+        <Button
+          variant='secondary'
+          onClick={sortingCallback}
+          title={'Sort Column'}
+          data-testid={`${columnConfig.dataKey}_action_sort_btn`}>
           {getSortingIcon(columnSortOrder?.order)}
         </Button>
       )}

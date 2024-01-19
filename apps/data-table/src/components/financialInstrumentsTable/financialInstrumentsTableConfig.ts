@@ -2,9 +2,9 @@ import { TableConfig } from '@bardius/common-ui';
 import { assetClassComparator } from '../table/comparators/sortByComparators';
 import { priceCellRenderer } from '../table/cellRenderers/cellRenderers';
 import { assetClassRowRenderer } from '../table/rowRenderers/rowRenderers';
-import { AssetClassData } from '../../hooks/useDummyData';
+import { FinancialInstrumentsData } from '../../hooks/useDummyData';
 
-const assetClassTableConfig: TableConfig<AssetClassData> = {
+const financialInstrumentsTableConfig: TableConfig<FinancialInstrumentsData> = {
   columns: [
     {
       dataKey: 'assetClass',
@@ -34,4 +34,4 @@ const assetClassTableConfig: TableConfig<AssetClassData> = {
   rowRenderer: assetClassRowRenderer,
 };
 
-export { assetClassTableConfig };
+export { financialInstrumentsTableConfig };

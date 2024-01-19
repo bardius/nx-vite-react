@@ -16,6 +16,7 @@ export interface SortingHook<T> {
   onSortByChange: SortByActionOnChange;
 }
 
+// Hook to provide sorted data, sort by config and change callback
 const useDataSorting = <T>(
   data?: readonly T[],
   sortBy?: SortBy[],

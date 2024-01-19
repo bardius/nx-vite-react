@@ -1,4 +1,5 @@
 import { FC, useEffect, useState } from 'react';
+import { Text } from '@salt-ds/core';
 import { ColumnConfig, TableHeader } from '../tableHeader/tableHeader';
 import { SortBy, SortByActionOnChange } from '../tableHeaderActions/tableHeaderActions';
 import {
@@ -10,6 +11,8 @@ import {
 } from '../tableRow/tableRow';
 
 import styles from './table.module.scss';
+import rowStyles from '../tableRow/tableRow.module.scss';
+import cellStyles from '../tableCell/tableCell.module.scss';
 
 export interface TableConfig<T = RowData> {
   // Columns configuration & settings
@@ -70,9 +73,14 @@ const Table: FC<TableProps<any>> = ({ config, data, sortBy, onSortByChange = [] 
               />
             ))
           ) : (
-            <tr>
-              <td data-testid='no_data_row' colSpan={totalColumns}>
-                No data to display
+            <tr className={rowStyles['saltGridTableRow']} data-testid={`no_data_row`}>
+              <td
+                className={`${cellStyles['saltGridCell']}`}
+                data-testid='no_data_cell'
+                colSpan={totalColumns}>
+                <Text disabled={true} styleAs={'notation'}>
+                  No data to display
+                </Text>
               </td>
             </tr>
           )}

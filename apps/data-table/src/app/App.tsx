@@ -9,6 +9,7 @@ const errorLogger = (error: Error, info: ErrorInfo) => {
   console.error(error);
 };
 
+// Application layout orchestration using outlet to render child route components
 const App = () => {
   return (
     <div id='app' data-testid='app'>

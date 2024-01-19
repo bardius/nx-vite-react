@@ -15,6 +15,6 @@ describe('App', () => {
 
   it('should have a page title', () => {
     const { getByText } = render(<RouterProvider router={mockAppRouter} />);
-    expect(getByText(/Asset Class Breakdown/gi)).toBeTruthy();
+    expect(getByText(/Financial Instruments/gi)).toBeTruthy();
   });
 });

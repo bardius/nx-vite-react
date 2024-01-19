@@ -12,6 +12,7 @@ export interface AppLayoutProps {
   logger?: (error: Error, info: ErrorInfo) => void;
 }
 
+// Application layout with error boundary wrapping page contents
 const AppLayout: FC<PropsWithChildren<AppLayoutProps>> = ({ children, headerNavItems, logger }) => {
   return (
     <BorderLayout data-testid={'app-layout'}>
@@ -19,11 +20,17 @@ const AppLayout: FC<PropsWithChildren<AppLayoutProps>> = ({ children, headerNavI
         <AppHeader items={headerNavItems} />
       </BorderItem>
       <BorderItem position='center'>
-        <ErrorBoundary fallbackRender={AppError} onError={logger}>
-          <FlexLayout className={styles['container-page']} align='center' justify={'center'}>
-            <FlexItem align='center'>{children}</FlexItem>
-          </FlexLayout>
-        </ErrorBoundary>
+        <FlexLayout
+          className={styles['container-page']}
+          align='center'
+          justify={'center'}
+          data-testid={'app-body'}>
+          <FlexItem align='center'>
+            <ErrorBoundary fallbackRender={AppError} onError={logger}>
+              {children}
+            </ErrorBoundary>
+          </FlexItem>
+        </FlexLayout>
       </BorderItem>
       <BorderItem position='south'>
         <AppFooter />

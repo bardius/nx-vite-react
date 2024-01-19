@@ -1,9 +1,15 @@
 import { SortByOrder } from '@bardius/common-ui';
-import { AssetClassData } from '../../../hooks/useDummyData';
+import { FinancialInstrumentsData } from '../../../hooks/useDummyData';
 
+// Sort order "ASC" for asset class values
 const assetClassOrderMapping = ['Equities', 'Macro', 'Credit'];
 
-const assetClassComparator = (a: AssetClassData, b: AssetClassData, order: SortByOrder): number => {
+// Comparator with custom specified ordering for asset classes
+const assetClassComparator = (
+  a: FinancialInstrumentsData,
+  b: FinancialInstrumentsData,
+  order: SortByOrder,
+): number => {
   if (!order) {
     return 0;
   }
