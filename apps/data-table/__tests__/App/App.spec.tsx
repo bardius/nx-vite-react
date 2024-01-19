@@ -13,8 +13,8 @@ describe('App', () => {
     expect(baseElement).toBeTruthy();
   });
 
-  it('should have a greeting as the title', () => {
+  it('should have a page title', () => {
     const { getByText } = render(<RouterProvider router={mockAppRouter} />);
-    expect(getByText(/Welcome data-table/gi)).toBeTruthy();
+    expect(getByText(/Asset Class Breakdown/gi)).toBeTruthy();
   });
 });

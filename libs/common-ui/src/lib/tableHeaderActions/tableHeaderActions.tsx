@@ -1,4 +1,4 @@
-import { FC, ReactNode } from 'react';
+import { FC, ReactNode, useCallback } from 'react';
 import { find, propEq } from 'ramda';
 import { SortableAlphaIcon, SortAscendIcon, SortDescendIcon } from '@salt-ds/icons';
 import { Button } from '@salt-ds/core';
@@ -11,7 +11,7 @@ export type ColumnHeaderActions = {
   sorting: boolean;
 };
 
-export type SortByActionOnChange = undefined | ((sortBy: SortBy) => void);
+export type SortByActionOnChange = undefined | ((dataKey: string) => void);
 
 // Configurations for the header action buttons
 export type ColumnActionsConfig = {
@@ -38,17 +38,6 @@ export interface SortBy {
   order: SortByOrder;
 }
 
-// Given a sortBy order, calculate the next toggled value
-const getNextSortByOrder = (order: SortByOrder): SortByOrder => {
-  if (!order) {
-    return 'ASC';
-  } else if (order === 'ASC') {
-    return 'DESC';
-  }
-
-  return undefined;
-};
-
 // Given a sortBy order get the desired Icon
 const getSortingIcon = (order: SortByOrder): ReactNode => {
   switch (order) {
@@ -62,26 +51,20 @@ const getSortingIcon = (order: SortByOrder): ReactNode => {
 };
 
 const TableHeaderActions: FC<TableHeaderActionsProps> = ({ columnConfig, actionsConfig }) => {
-  if (!columnConfig.actions) {
-    return null;
-  }
-
   const columnSortOrder = find(propEq(columnConfig.dataKey, 'dataKey'))(
     actionsConfig.sorting.values,
   ) as SortBy | undefined;
-  const sortingCallback = () => {
-    const nextOrder = getNextSortByOrder(columnSortOrder?.order);
 
-    actionsConfig.sorting.callback &&
-      actionsConfig.sorting.callback({
-        priority: columnSortOrder?.priority ?? 0,
-        dataKey: columnConfig.dataKey,
-        order: nextOrder,
-      });
-  };
+  const sortingCallback = useCallback(() => {
+    actionsConfig.sorting.callback && actionsConfig.sorting.callback(columnConfig.dataKey);
+  }, [actionsConfig, columnConfig]);
 
   const shouldShowSorting =
     columnConfig.actions?.sorting && typeof actionsConfig.sorting.callback === 'function';
+
+  if (!columnConfig.actions) {
+    return null;
+  }
 
   return (
     <div className={styles['saltGridHeaderCell-actions']}>

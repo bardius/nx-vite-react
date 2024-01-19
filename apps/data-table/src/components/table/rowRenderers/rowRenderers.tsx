@@ -23,21 +23,20 @@ const assetClassRowRenderer: RowRenderer = (
 ) => {
   const tableCells: ReactElement[] = [];
 
-  for (const [columnKey, cellValue] of Object.entries(rowData)) {
-    if (columnKey !== uniqueRowIdKeyName) {
-      const uniqueKey = `${rowData[uniqueRowIdKeyName]}_cell_${columnKey}`;
-      tableCells.push(
-        <TableCell
-          key={uniqueKey}
-          dataTestId={uniqueKey}
-          data={cellValue}
-          cellRenderer={rowConfig[columnKey].cellRenderer}
-          logger={rowConfig[columnKey].logger}
-          customClassName={styles[`bgColor-${getAssetClassColor(rowData.assetClass)}`]}
-        />,
-      );
-    }
-  }
+  Object.keys(rowConfig).forEach(columnKey => {
+    const uniqueKey = `${rowData[uniqueRowIdKeyName]}_cell_${columnKey}`;
+
+    tableCells.push(
+      <TableCell
+        key={uniqueKey}
+        dataTestId={uniqueKey}
+        data={rowData[columnKey]}
+        cellRenderer={rowConfig[columnKey].cellRenderer}
+        logger={rowConfig[columnKey].logger}
+        customClassName={styles[`bgColor-${getAssetClassColor(rowData.assetClass)}`]}
+      />,
+    );
+  });
 
   return tableCells;
 };
