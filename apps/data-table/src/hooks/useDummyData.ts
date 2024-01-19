@@ -52,7 +52,7 @@ const dataDummy: AssetClassData[] = [
     price: 3150.67,
     assetClass: 'Credit',
   },
-].concat(sampleData);
+].concat(sampleData as never[]);
 
 const useDummyData = (): AssetClassData[] => {
   const [data, setData] = useState<AssetClassData[]>([]);
