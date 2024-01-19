@@ -6,6 +6,7 @@ import { headerNavItems } from '../constants/navigation';
 // TODO: split logger into separate file
 const errorLogger = (error: Error, info: ErrorInfo) => {
   // Do something with the error, e.g. log to an external API
+  console.error(error);
 };
 
 const App = () => {

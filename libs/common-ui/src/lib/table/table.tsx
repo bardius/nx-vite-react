@@ -18,34 +18,21 @@ export interface TableConfig<T = RowData> {
   rowRenderer?: RowRenderer<T>;
   // Dataset keyName that signifies a unique rowData id. Default is "uniqueDataRowId"
   uniqueRowIdKeyName?: string;
-  // Callback to invoke when sortBy action is triggered
-  onSortByChange?: SortByActionOnChange;
 }
 
-export interface TableProps<T = RowData> {
+export interface TableProps<T extends RowData> {
   // Table configuration
   config: TableConfig<T>;
   // Table data to populate columns and cells
   data?: T[];
   // Optional sorting configuration
   sortBy?: SortBy[];
+  // Callback to invoke when sortBy action is triggered
+  onSortByChange: SortByActionOnChange;
 }
 
-// export type ColumnSortFunction = (a: unknown, b: unknown) => number;
-// sortingType: 'alphanumeric' | 'numeric' | ColumnSortFunction;
-
-const Table: FC<TableProps> = ({ config, data, sortBy = [] }) => {
-  // const onSortByClick = useCallback(
-  //   (dataKey: string, order: SortByOrder) => {
-  //     const nextSortBy: SortBy = {
-  //       priority: 0,
-  //       dataKey,
-  //       order,
-  //     };
-  //     setSortBy([nextSortBy])
-  //   },
-  //   [sortBy],
-  // );
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const Table: FC<TableProps<any>> = ({ config, data, sortBy, onSortByChange = [] }) => {
   const [rowConfig, setRowConfig] = useState<RowConfig>();
   const hasData = data && data.length > 0;
   const totalColumns = config.columns.length;
@@ -69,7 +56,7 @@ const Table: FC<TableProps> = ({ config, data, sortBy = [] }) => {
         <TableHeader
           config={config.columns}
           sortBy={sortBy}
-          onSortByChange={config.onSortByChange}
+          onSortByChange={onSortByChange as SortByActionOnChange}
         />
         <tbody>
           {hasData && rowConfig ? (

@@ -24,11 +24,14 @@ const defaultCellRenderer: CellRenderer<any> = (data?: any) => {
   const displayedValue = data ? data.toString() : '';
   return (
     <>
-      <Text className={styles['saltGridBaseCell-valueContainer']} title={displayedValue}>
+      <Text
+        className={`${styles['saltGridBaseCell-valueContainer']} saltGridBaseCell-valueContainer`}
+        title={displayedValue}>
         {displayedValue}
       </Text>
-      <div className={styles['saltGridCell-columnSeparator']}></div>
-      <div className={styles['saltGridCell-rowSeparator']}></div>
+      <div
+        className={`${styles['saltGridCell-columnSeparator']} saltGridCell-columnSeparator`}></div>
+      <div className={`${styles['saltGridCell-rowSeparator']} saltGridCell-rowSeparator`}></div>
     </>
   );
 };

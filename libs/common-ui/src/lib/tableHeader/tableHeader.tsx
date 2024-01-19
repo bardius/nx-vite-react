@@ -7,10 +7,14 @@ import {
   ColumnHeaderActions,
   SortBy,
   SortByActionOnChange,
+  SortByOrder,
   TableHeaderActions,
 } from '../tableHeaderActions/tableHeaderActions';
 
 import styles from './tableHeader.module.scss';
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export type ColumnSortComparator<T = any> = (a: T, b: T, order?: SortByOrder) => number;
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export interface ColumnConfig<T = any> {
@@ -26,6 +30,8 @@ export interface ColumnConfig<T = any> {
   actions?: ColumnHeaderActions;
   // Error Boundary logger
   logger?: ErrorLogger;
+  // Custom comparator method to be used while sorting by this column data
+  sortingComparator?: ColumnSortComparator;
 }
 
 export type HeaderRenderer = (title?: string) => ReactNode;
@@ -34,9 +40,9 @@ export interface TableHeaderProps {
   // Table column configuration
   config: ColumnConfig[];
   // Sorting configuration
-  sortBy: SortBy[];
+  sortBy?: SortBy[];
   // Column sorting value change handler
-  onSortByChange?: SortByActionOnChange;
+  onSortByChange: SortByActionOnChange;
 }
 
 const defaultHeaderRenderer: HeaderRenderer = (title?) => {
@@ -59,7 +65,7 @@ const TableHeader: FC<TableHeaderProps> = ({ config, sortBy, onSortByChange }) =
     (): ColumnActionsConfig => ({
       sorting: {
         callback: onSortByChange,
-        values: sortBy,
+        values: sortBy ?? [],
       },
     }),
     [onSortByChange, sortBy],

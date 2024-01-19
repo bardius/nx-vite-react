@@ -37,7 +37,8 @@
     "graph": "nx graph",
     "build": "npx nx run-many -t build",
     "storybook": "nx run common-ui:storybook",
-    "storybook:test": "nx run common-ui:test-storybook"
+    "storybook:test": "nx run common-ui:test-storybook",
+    "start:data-table": "nx serve data-table"
   },
   "dependencies": {
     "@fontsource/open-sans": "^5.0.22",
