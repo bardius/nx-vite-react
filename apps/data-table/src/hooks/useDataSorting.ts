@@ -5,7 +5,7 @@ import {
   ComparatorsConfig,
   getNextSortByState,
   sortByMultipleComparators,
-} from '../utilities/sotring';
+} from '../utilities/sorting';
 
 export interface SortingHook<T> {
   // Sorted data set

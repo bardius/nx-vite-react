@@ -10,7 +10,9 @@ describe('Row Renderers', () => {
     it('should render with white color for Macro asset class', () => {
       const { baseElement } = render(
         <table>
-          <tr>{assetClassRowRenderer(dummyRowConfig, { assetClass: 'Macro' })}</tr>
+          <tbody>
+            <tr>{assetClassRowRenderer(dummyRowConfig, { assetClass: 'Macro' })}</tr>
+          </tbody>
         </table>,
       );
       expect(baseElement).toBeTruthy();
@@ -20,7 +22,9 @@ describe('Row Renderers', () => {
     it('should render with blue color for Equities asset class', () => {
       const { baseElement } = render(
         <table>
-          <tr>{assetClassRowRenderer(dummyRowConfig, { assetClass: 'Equities' })}</tr>
+          <tbody>
+            <tr>{assetClassRowRenderer(dummyRowConfig, { assetClass: 'Equities' })}</tr>
+          </tbody>
         </table>,
       );
       expect(baseElement).toBeTruthy();
@@ -30,7 +34,9 @@ describe('Row Renderers', () => {
     it('should render with green color for Credit asset class', () => {
       const { baseElement } = render(
         <table>
-          <tr>{assetClassRowRenderer(dummyRowConfig, { assetClass: 'Credit' })}</tr>
+          <tbody>
+            <tr>{assetClassRowRenderer(dummyRowConfig, { assetClass: 'Credit' })}</tr>
+          </tbody>
         </table>,
       );
       expect(baseElement).toBeTruthy();
