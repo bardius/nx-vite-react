@@ -2,18 +2,7 @@ import { FC } from 'react';
 import { SortBy, Table } from '@bardius/common-ui';
 import { financialInstrumentsTableConfig } from './financialInstrumentsTableConfig';
 import { useDataSorting } from '../../hooks/useDataSorting';
-
-// TODO: if we know ticker is unique we can remove uniqueDataRowId
-export type FinancialInstrumentsData = {
-  // Unique ID for each data item
-  uniqueDataRowId?: number;
-  // Ticker field
-  ticker: string;
-  // Price field
-  price: number | null;
-  // Asset Class field
-  assetClass: string;
-};
+import { FinancialInstrumentsData } from '../../hooks/useDummyData';
 
 export interface FinancialInstrumentsTableProps {
   data: FinancialInstrumentsData[];

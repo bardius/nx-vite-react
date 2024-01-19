@@ -1,9 +1,6 @@
 import { Text } from '@salt-ds/core';
-import { useDummyData } from '../hooks/useDummyData';
-import {
-  FinancialInstrumentsData,
-  FinancialInstrumentsTable,
-} from '../components/financialInstrumentsTable/financialInstrumentsTable';
+import { FinancialInstrumentsData, useDummyData } from '../hooks/useDummyData';
+import { FinancialInstrumentsTable } from '../components/financialInstrumentsTable/financialInstrumentsTable';
 
 const FinancialInstrumentsPage = () => {
   //

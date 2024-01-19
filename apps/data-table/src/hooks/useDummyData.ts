@@ -1,6 +1,17 @@
 import { useEffect, useState } from 'react';
 import sampleData from '../../__fixtures__/sampleData.json';
-import { FinancialInstrumentsData } from '../components/financialInstrumentsTable/financialInstrumentsTable';
+
+// TODO: if we know ticker is unique we can remove uniqueDataRowId
+export type FinancialInstrumentsData = {
+  // Unique ID for each data item
+  uniqueDataRowId?: number;
+  // Ticker field
+  ticker: string;
+  // Price field
+  price: number | null;
+  // Asset Class field
+  assetClass: string;
+};
 
 const dataDummy: FinancialInstrumentsData[] = [
   {
