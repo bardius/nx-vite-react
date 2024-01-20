@@ -1,11 +1,11 @@
-import { FC, HTMLAttributes, useState } from 'react';
+import { FC, HTMLAttributes, memo, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Button, FlexItem, FlexLayout, StackLayout, useResponsiveProp } from '@salt-ds/core';
 import { CloseIcon, MenuIcon } from '@salt-ds/icons';
 import { Drawer, NavigationItem } from '@salt-ds/lab';
+import { AppLogo } from '../appLogo/appLogo';
 
 import styles from './appHeader.module.scss';
-import { AppLogo } from '../appLogo/appLogo';
 
 export interface NavigationItem {
   id: string;
@@ -19,7 +19,7 @@ export interface AppHeaderProps extends HTMLAttributes<HTMLElement> {
 }
 
 // Header with Logo and config driven responsive navigation
-const AppHeader: FC<AppHeaderProps> = ({ items }) => {
+const AppHeader: FC<AppHeaderProps> = memo(({ items }) => {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const isMobile = useResponsiveProp({ xs: true, sm: false }, false);
 
@@ -123,6 +123,6 @@ const AppHeader: FC<AppHeaderProps> = ({ items }) => {
       )}
     </header>
   );
-};
+});
 
 export { AppHeader };

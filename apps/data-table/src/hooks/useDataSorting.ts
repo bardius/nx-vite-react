@@ -25,6 +25,7 @@ const useDataSorting = <T>(
   const [sortedData, setSortedData] = useState<T[]>(clone(data ?? []));
   const [sortByState, setSortByState] = useState<SortBy[]>(sortBy ?? []);
 
+  // Callback to update sort by config value
   const onSortByChange = useCallback(
     (dataKey: string) => {
       setSortByState(getNextSortByState(dataKey, sortByState));
@@ -41,7 +42,13 @@ const useDataSorting = <T>(
       }
     });
 
-    setSortedData(sortByMultipleComparators(clone(data ?? []), comparators, sortByState));
+    const nextSortedData: T[] = sortByMultipleComparators(
+      clone(data ?? []),
+      comparators,
+      sortByState,
+    );
+
+    setSortedData(nextSortedData);
   }, [data, sortByState, columnsConfig]);
 
   return {

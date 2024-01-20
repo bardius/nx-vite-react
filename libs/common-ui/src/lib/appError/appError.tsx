@@ -1,11 +1,11 @@
-import { FC } from 'react';
+import { FC, memo } from 'react';
 import { AriaAnnouncerProvider, Card } from '@salt-ds/core';
 import { ContentStatus } from '@salt-ds/lab';
 import { FallbackProps } from 'react-error-boundary/dist/declarations/src/types';
 
 import styles from './appError.module.scss';
 
-const AppError: FC<FallbackProps> = ({ error, resetErrorBoundary }) => {
+const AppError: FC<FallbackProps> = memo(({ error, resetErrorBoundary }) => {
   return (
     <AriaAnnouncerProvider>
       <Card className={styles['saltCard-error']} data-testid={'error-app'}>
@@ -17,6 +17,6 @@ const AppError: FC<FallbackProps> = ({ error, resetErrorBoundary }) => {
       </Card>
     </AriaAnnouncerProvider>
   );
-};
+});
 
 export { AppError };

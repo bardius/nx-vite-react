@@ -142,19 +142,21 @@ Storybook has been configured and a story for Table component has been created a
 Few tools have been configured and being used to improve the development experience in this project:
 
 - [SonarQube][sonar_link], digests the reports from unit test and linting tools
-- Jest to execute unit tests
-- Husky, pre-commit hooks in place
-- Commitizen & Commit Lint for conventional commits, use "npm run commit" to get a cli wizard
-- Github Actions, actions run on pull requests to verify quality and stability
-- Dependabot to get notified for dependency version updates
-- Jscpd to check on code duplications
-- StyleLint sor Sass linting
-- EsLint for JS TS linting
-- Prettier for formatting consistency
-- Lint Staged
-- Storybook, also a couple of samples of interactive tests
-- Cypress with a sample of E2E tests
-- Browserslist to define build target compatibility
+- [Jest][jest_link] & [RTL][rtl_link] to execute unit tests
+- [Husky][husky_link], pre-commit hooks in place
+- [Commitizen][cz_link] & Commit Lint for conventional commits, use "npm run commit" to get a cli wizard
+- [Github Actions][ga_link], actions run on pull requests to verify quality and stability
+- [Dependabot][dependabot_link] to get notified for dependency version updates
+- [Jscpd][jspd_link] to check on code duplications
+- [StyleLint][stylelint_link] sor Sass linting
+- [EsLint][eslint_link] for JS TS linting
+- [Prettier][prettier_link] for formatting consistency
+- [Lint Staged][lint_staged_link], run linters in staged files
+- [Storybook][storybook_link], also a couple of samples of interactive tests
+- [Cypress][cypress_link] with a sample of E2E tests
+- [Browserslist][browserlist_link] to define build target compatibility
+- [WDYR][wdyr_link] (why did you render), to debug excessive re-renders
+- [Typescript][ts_link] for type safe coding
 
 <!----variables---->
 
@@ -178,3 +180,18 @@ Few tools have been configured and being used to improve the development experie
 [comparator_link]: https://github.com/bardius/nx-vite-react/tree/main/apps/data-table/src/components/table/comparators
 [ramda_link]: https://ramdajs.com/
 [table_component_link]: https://github.com/bardius/nx-vite-react/tree/main/apps/data-table/components/financialInstrumentsTable
+[wdyr_link]: https://www.npmjs.com/package/@welldone-software/why-did-you-render
+[browserlist_link]: https://browsersl.ist/
+[cypress_link]: https://www.cypress.io/
+[storybook_link]: https://storybook.js.org/
+[prettier_link]: https://prettier.io/
+[eslint_link]: https://eslint.org/
+[stylelint_link]: https://stylelint.io/
+[jspd_link]: https://www.npmjs.com/package/jscpd
+[dependabot_link]: https://github.com/dependabot
+[lint_staged_link]: https://www.npmjs.com/package/lint-staged
+[ga_link]: https://docs.github.com/en/actions
+[cz_link]: https://www.npmjs.com/package/commitizen
+[husky_link]: https://typicode.github.io/husky/
+[jest_link]: https://jestjs.io/
+[rtl_link]: https://testing-library.com/docs/react-testing-library/intro/

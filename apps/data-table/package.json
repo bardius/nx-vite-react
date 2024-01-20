@@ -19,5 +19,16 @@
     "lint:styles": "npx stylelint -f verbose \"src/**/*.scss\"",
     "lint:styles:ci": "npx stylelint -f json --output-file reports/stylelint.json \"src/**/*.scss\"",
     "lint:styles:fix": "npx stylelint --fix \"src/**/*.scss\""
+  },
+  "browserslist": {
+    "production": [
+      "defaults"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 edge version",
+      "last 1 safari version"
+    ]
   }
 }
