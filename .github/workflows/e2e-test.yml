@@ -1,0 +1,41 @@
+name: 'E2E Tests'
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ['main', 'develop']
+  pull_request:
+    branches: ['main', 'develop']
+    types: ['opened', 'reopened', 'synchronize']
+
+env:
+  NODE_OPTIONS: "--no-warnings"
+
+jobs:
+  cypress-run:
+    name: Cypress run on Chrome
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+
+      - name: Install dependencies
+        env:
+          HUSKY: 0
+        run: |
+          npm run setup:ci
+
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
+        with:
+          project: ./apps/data-table-e2e
+          browser: chrome
