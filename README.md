@@ -98,17 +98,17 @@ nx run data-table-e2e:e2e
 Monorepo source code is broken down into libraries (under libs folder) and applications (under apps folder).
 Each package has its source code under src folder.
 
-There is a library package for common presentational components "common-ui" ([libs/common-ui][common_ui_link]).
+There is a library package for common presentational components, called "common-ui" ([libs/common-ui][common_ui_link]).
 
-There is a package for the Data Table application "data-table" ([apps/data-table][data_table_link]).
+There is a package for the Data Table application, called "data-table" ([apps/data-table][data_table_link]).
 
 ### Data Table application
 
-This simple react application is using [React router][react_router_link] to serve a home page and handle and 404 urls.
+This simple react application is using [React router][react_router_link] to serve a home page and handle errors or 404 urls.
 [Salt Design System][salt_ds_link] by JP. Morgan is being used to provide a consistent layout and branding.
 [Ramda][ramda_link] is used as lightweight utility library.
 
-The home page contains a data table with sorting feature and dummy data ([FinancialInstrumentsTable][table_component_link]).
+The home page contains a data table with sorting feature, preloaded sorting for all columns, and dummy data ([FinancialInstrumentsTable][table_component_link]).
 
 The data table is reusing the [presentational components][pc_link] from the "common-ui" package, [extends/overrides][renderers] for default row/cell renderers
 via configuration and uses headless component for [multiple sorting feature][sorting_link] with preloaded sortBy values.
@@ -120,7 +120,7 @@ via configuration and uses headless component for [multiple sorting feature][sor
 Sorting can be applied in all columns with default or [custom sort comparator functions][comparator_link] per column.
 Based on configuration it can be turned on/off, have custom comparator and pre-populate a sort by state.
 
-Multiple sorting rules can apply simultaneously.
+Multiple sorting rules can apply simultaneously with a priority order.
 
 #### Custom renderers
 
@@ -144,8 +144,8 @@ Few tools have been configured and being used to improve the development experie
 - [SonarQube][sonar_link], digests the reports from unit test and linting tools
 - Jest to execute unit tests
 - Husky, pre-commit hooks in place
-- Commitizen & Commit Lint for conventional commits, use "npm run commit" to get a Cli wizard
-- Github Actions, actions run on pul requests to verify quality and stability
+- Commitizen & Commit Lint for conventional commits, use "npm run commit" to get a cli wizard
+- Github Actions, actions run on pull requests to verify quality and stability
 - Dependabot to get notified for dependency version updates
 - Jscpd to check on code duplications
 - StyleLint sor Sass linting
@@ -153,7 +153,7 @@ Few tools have been configured and being used to improve the development experie
 - Prettier for formatting consistency
 - Lint Staged
 - Storybook, also a couple of samples of interactive tests
-- Cypress
+- Cypress with a sample of E2E tests
 - Browserslist to define build target compatibility
 
 <!----variables---->
