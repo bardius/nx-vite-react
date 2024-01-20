@@ -1,4 +1,4 @@
-import { FC, ReactNode, useCallback } from 'react';
+import { FC, memo, ReactNode, useCallback } from 'react';
 import { find, propEq } from 'ramda';
 import { SortableAlphaIcon, SortAscendIcon, SortDescendIcon } from '@salt-ds/icons';
 import { Button } from '@salt-ds/core';
@@ -50,7 +50,7 @@ const getSortingIcon = (order: SortByOrder): ReactNode => {
   }
 };
 
-const TableHeaderActions: FC<TableHeaderActionsProps> = ({ columnConfig, actionsConfig }) => {
+const TableHeaderActions: FC<TableHeaderActionsProps> = memo(({ columnConfig, actionsConfig }) => {
   const columnSortOrder = find(propEq(columnConfig.dataKey, 'dataKey'))(
     actionsConfig.sorting.values,
   ) as SortBy | undefined;
@@ -79,6 +79,6 @@ const TableHeaderActions: FC<TableHeaderActionsProps> = ({ columnConfig, actions
       )}
     </div>
   );
-};
+});
 
 export { TableHeaderActions };

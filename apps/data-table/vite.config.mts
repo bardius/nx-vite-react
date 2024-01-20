@@ -2,6 +2,7 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
+import browserslistToEsbuild from 'browserslist-to-esbuild';
 
 export default defineConfig({
   root: __dirname,
@@ -20,7 +21,14 @@ export default defineConfig({
     host: 'localhost',
   },
 
-  plugins: [react(), nxViteTsPaths()],
+  plugins: [
+    // Add WDYR for dev mode.
+    // More on; https://github.com/welldone-software/why-did-you-render/issues/243#issuecomment-1132892461
+    react({
+      //jsxImportSource: '@welldone-software/why-did-you-render',
+    }),
+    nxViteTsPaths(),
+  ],
 
   // Uncomment this if you are using workers.
   // worker: {
@@ -33,6 +41,10 @@ export default defineConfig({
     commonjsOptions: {
       transformMixedEsModules: true,
     },
+    // Add browserlist support to Esbuild
+    // More on: https://github.com/vitejs/vite/discussions/6849#discussioncomment-4082583
+    // And: https://vitejs.dev/guide/troubleshooting.html#this-package-is-esm-only
+    target: browserslistToEsbuild(),
   },
 
   test: {

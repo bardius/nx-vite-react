@@ -1,12 +1,12 @@
 import { FlexItem, FlexLayout, Text } from '@salt-ds/core';
-import { FC } from 'react';
+import { FC, memo } from 'react';
 
 import styles from './appFooter.module.scss';
 
 /* eslint-disable-next-line */
 export interface AppFooterProps {}
 
-const AppFooter: FC<AppFooterProps> = () => {
+const AppFooter: FC<AppFooterProps> = memo(() => {
   return (
     <FlexLayout
       className={styles['footer-app']}
@@ -18,6 +18,6 @@ const AppFooter: FC<AppFooterProps> = () => {
       </FlexItem>
     </FlexLayout>
   );
-};
+});
 
 export { AppFooter };

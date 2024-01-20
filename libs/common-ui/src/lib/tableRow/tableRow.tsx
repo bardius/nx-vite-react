@@ -1,4 +1,4 @@
-import { FC, ReactElement } from 'react';
+import { FC, memo, ReactElement } from 'react';
 import { isEmpty } from 'ramda';
 import { CellRenderer, ErrorLogger, TableCell } from '../tableCell/tableCell';
 
@@ -61,21 +61,23 @@ const defaultRowRenderer: RowRenderer = (
   return tableCells;
 };
 
-const TableRow: FC<TableRowProps> = ({
-  rowData,
-  rowConfig,
-  rowRenderer = defaultRowRenderer,
-  uniqueRowIdKeyName = defaultUniqueRowIdKeyName,
-}) => {
-  const isValidData = rowData && rowData.constructor === Object && !isEmpty(rowData);
+const TableRow: FC<TableRowProps> = memo(
+  ({
+    rowData,
+    rowConfig,
+    rowRenderer = defaultRowRenderer,
+    uniqueRowIdKeyName = defaultUniqueRowIdKeyName,
+  }) => {
+    const isValidData = rowData && rowData.constructor === Object && !isEmpty(rowData);
 
-  return (
-    <tr
-      className={styles['saltGridTableRow']}
-      data-testid={`${(rowData as RowData)[uniqueRowIdKeyName]}_row`}>
-      {isValidData && rowRenderer(rowConfig, rowData, uniqueRowIdKeyName)}
-    </tr>
-  );
-};
+    return (
+      <tr
+        className={styles['saltGridTableRow']}
+        data-testid={`${(rowData as RowData)[uniqueRowIdKeyName]}_row`}>
+        {isValidData && rowRenderer(rowConfig, rowData, uniqueRowIdKeyName)}
+      </tr>
+    );
+  },
+);
 
 export { TableRow, defaultUniqueRowIdKeyName };

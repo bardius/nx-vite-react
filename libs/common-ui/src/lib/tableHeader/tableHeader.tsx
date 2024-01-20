@@ -1,4 +1,4 @@
-import { FC, ReactNode, useMemo } from 'react';
+import { FC, memo, ReactNode, useMemo } from 'react';
 import { Text } from '@salt-ds/core';
 import { ErrorBoundary } from 'react-error-boundary';
 import { CellRenderer, ErrorLogger } from '../tableCell/tableCell';
@@ -60,7 +60,7 @@ const defaultErrorLogger: ErrorLogger = (error, info) => {
 
 const defaultErrorRenderer = () => <Text>error</Text>;
 
-const TableHeader: FC<TableHeaderProps> = ({ config, sortBy, onSortByChange }) => {
+const TableHeader: FC<TableHeaderProps> = memo(({ config, sortBy, onSortByChange }) => {
   const actionsConfig = useMemo(
     (): ColumnActionsConfig => ({
       sorting: {
@@ -90,6 +90,6 @@ const TableHeader: FC<TableHeaderProps> = ({ config, sortBy, onSortByChange }) =
       </tr>
     </thead>
   );
-};
+});
 
 export { TableHeader };

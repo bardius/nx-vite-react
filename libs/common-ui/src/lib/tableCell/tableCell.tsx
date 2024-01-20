@@ -1,4 +1,4 @@
-import { ErrorInfo, FC, ReactElement } from 'react';
+import { ErrorInfo, FC, memo, ReactElement } from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
 import { Text } from '@salt-ds/core';
 
@@ -43,20 +43,22 @@ const defaultErrorLogger: ErrorLogger = (error, info) => {
 
 const defaultErrorRenderer = () => <Text>error</Text>;
 
-const TableCell: FC<TableCellProps> = ({
-  cellRenderer = defaultCellRenderer,
-  data,
-  dataTestId,
-  logger = defaultErrorLogger,
-  customClassName,
-}) => {
-  return (
-    <td className={`${styles['saltGridCell']} ${customClassName}`} data-testid={dataTestId}>
-      <ErrorBoundary fallbackRender={defaultErrorRenderer} onError={logger}>
-        {cellRenderer(data)}
-      </ErrorBoundary>
-    </td>
-  );
-};
+const TableCell: FC<TableCellProps> = memo(
+  ({
+    cellRenderer = defaultCellRenderer,
+    data,
+    dataTestId,
+    logger = defaultErrorLogger,
+    customClassName,
+  }) => {
+    return (
+      <td className={`${styles['saltGridCell']} ${customClassName}`} data-testid={dataTestId}>
+        <ErrorBoundary fallbackRender={defaultErrorRenderer} onError={logger}>
+          {cellRenderer(data)}
+        </ErrorBoundary>
+      </td>
+    );
+  },
+);
 
 export { TableCell };
