@@ -143,17 +143,17 @@ Storybook has been configured and a story for Table component has been created a
 
 Few tools have been configured and being used to improve the development experience in this project:
 
-- [SonarQube][sonar_link], digests the reports from unit test and linting tools
+- [SonarQube][sonar_link], code quality & SAST, additionally digests the reports from unit test and linting tools
 - [Jest][jest_link] & [RTL][rtl_link] to execute unit tests
 - [Husky][husky_link], pre-commit hooks in place
-- [Commitizen][cz_link] & Commit Lint for conventional commits, use "npm run commit" to get a cli wizard
+- [Commitizen][cz_link] & [Commit Lint][commit_lint_link] for [conventional commits][conventional_commits_link], use "npm run commit" to get a cli wizard
 - [Github Actions][ga_link], actions run on pull requests to verify quality and stability
 - [Dependabot][dependabot_link] to get notified for dependency version updates
 - [Jscpd][jspd_link] to check on code duplications
 - [StyleLint][stylelint_link] sor Sass linting
-- [EsLint][eslint_link] for JS TS linting
+- [EsLint][eslint_link] for JS & TS linting
 - [Prettier][prettier_link] for formatting consistency
-- [Lint Staged][lint_staged_link], run linters in staged files
+- [Lint Staged][lint_staged_link], run linters on staged files
 - [Storybook][storybook_link], also a couple of samples of interactive tests
 - [Cypress][cypress_link] with a sample of E2E tests
 - [Browserslist][browserlist_link] to define build target compatibility
@@ -201,3 +201,5 @@ Few tools have been configured and being used to improve the development experie
 [jest_link]: https://jestjs.io/
 [rtl_link]: https://testing-library.com/docs/react-testing-library/intro/
 [madge_link]: https://www.npmjs.com/package/madge
+[commit_lint_link]: https://commitlint.js.org
+[conventional_commits_link]: https://www.conventionalcommits.org/en/v1.0.0/
