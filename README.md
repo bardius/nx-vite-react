@@ -5,7 +5,7 @@
 This is of a monorepo that contains library and application examples based on
 [Nx][nx_link], [Typescript][ts_link], [ReactJs][react_link] and [Vite][vite_link].
 
-<img alt="Data Table" width="512" src="https://github.com/bardius/nx-vite-react/tree/main/screenshots/intro.png?raw=true">
+<img alt="Data Table" width="512" src="https://raw.githubusercontent.com/bardius/nx-vite-react/main/screenshots/intro.png">
 
 ## Required NodeJs version
 
