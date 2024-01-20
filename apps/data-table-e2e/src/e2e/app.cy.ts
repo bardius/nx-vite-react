@@ -1,13 +1,27 @@
-import { getGreeting } from '../support/app.po';
+import { getAssetClassSortBtn, getColumns, getHeading, getRows, getTable } from '../support/app.po';
 
-describe('data-table-e2e', () => {
+describe('Financial Instrument Table Page', () => {
   beforeEach(() => cy.visit('/'));
 
-  it('should display welcome message', () => {
-    // Custom command example, see `../support/commands.ts` file
-    cy.login('my-email@something.com', 'myPassword');
+  it('should display page title', () => {
+    getHeading()
+      .contains(/Financial Instruments/)
+      .should('exist');
+  });
 
-    // Function helper example, see `../support/app.po.ts` file
-    getGreeting().contains(/Welcome/);
+  it('should display financial instruments table', () => {
+    getTable().should('exist');
+  });
+
+  it('should display all rows', () => {
+    getRows().should('have.length', 25);
+  });
+
+  it('should sort data by asset class', () => {
+    getColumns().first().invoke('data', 'testid').should('eq', 'DELTA2_cell_assetClass');
+    getAssetClassSortBtn().click();
+    getColumns().first().invoke('data', 'testid').should('eq', 'ALPHA_cell_assetClass');
+    getAssetClassSortBtn().click();
+    getColumns().first().invoke('data', 'testid').should('eq', 'BETA_cell_assetClass');
   });
 });

@@ -5,7 +5,7 @@
 This is of a monorepo that contains library and application examples based on
 [Nx][nx_link], [Typescript][ts_link], [ReactJs][react_link] and [Vite][vite_link].
 
-<img alt="Data Table" width="512" src="https://github.com/bardius/nx-vite-react/tree/main/screenshots/intro.png">
+<img alt="Data Table" width="512" src="https://github.com/bardius/nx-vite-react/tree/main/screenshots/intro.png?raw=true">
 
 ## Required NodeJs version
 
@@ -71,6 +71,26 @@ or Nx command directly:
 
 ```bash
 nx run-many -t test --verbose
+```
+
+## Execute E2E tests
+
+A single command will execute Cypress E2E tests for data-table package:
+
+```bash
+npm run e2e
+```
+
+or to run in headed mode:
+
+```bash
+npm run e2e:headed
+```
+
+or Nx command directly:
+
+```bash
+nx run data-table-e2e:e2e
 ```
 
 ## Repo structure
