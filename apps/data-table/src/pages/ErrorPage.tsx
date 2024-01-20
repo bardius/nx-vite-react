@@ -7,10 +7,9 @@ export interface AppRouteError {
 
 const ErrorPage = () => {
   const error = useRouteError() as AppRouteError | undefined;
-  console.error(error);
 
   return (
-    <div id='error-page' data-testid={'page'}>
+    <div id='error-page' data-testid={'error-page'}>
       <h1>Oops!</h1>
       <p>Sorry, an unexpected error has occurred.</p>
       {error && (

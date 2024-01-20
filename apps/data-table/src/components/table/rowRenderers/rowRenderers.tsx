@@ -3,6 +3,7 @@ import { defaultUniqueRowIdKeyName, RowRenderer, TableCell } from '@bardius/comm
 
 import styles from './rowRenderers.module.scss';
 
+// Helper to retrieve color class name per asset class value
 const getAssetClassColor = (assetClass: string) => {
   switch (assetClass.toLowerCase()) {
     case 'credit':
@@ -16,6 +17,7 @@ const getAssetClassColor = (assetClass: string) => {
   }
 };
 
+// Renderer to style rows based on asset class value
 const assetClassRowRenderer: RowRenderer = (
   rowConfig,
   rowData,

@@ -1,8 +1,9 @@
 import { RouteObject } from 'react-router-dom';
 import { App } from '../app/App';
-import { HomePage } from '../pages/HomePage';
+import { FinancialInstrumentsPage } from '../pages/FinancialInstrumentsPage';
 import { ErrorPage } from '../pages/ErrorPage';
 
+//
 const routerConfig: RouteObject[] = [
   {
     path: '/',
@@ -11,11 +12,11 @@ const routerConfig: RouteObject[] = [
     children: [
       {
         index: true,
-        element: <HomePage />,
+        element: <FinancialInstrumentsPage />,
       },
       {
         path: 'home',
-        element: <HomePage />,
+        element: <FinancialInstrumentsPage />,
       },
       {
         path: 'error',

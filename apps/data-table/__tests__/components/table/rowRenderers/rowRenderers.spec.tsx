@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import { assetClassRowRenderer } from './rowRenderers';
+import { assetClassRowRenderer } from '../../../../src/components/table/rowRenderers/rowRenderers';
 
 describe('Row Renderers', () => {
   describe('Asset Class Color Row Render', () => {

@@ -2,7 +2,7 @@ import { create } from '@storybook/theming';
 
 export default create({
   base: 'dark',
-  brandTitle: 'Salt Design System',
-  brandUrl: 'https://www.saltdesignsystem.com/',
+  brandTitle: 'Common UI Components',
+  brandUrl: 'https://github.com/bardius/nx-vite-react',
   brandTarget: '_self',
 });

@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import { Table, TableConfig } from './table';
 import { RowData } from '../tableRow/tableRow';
 import { SortBy } from '../tableHeaderActions/tableHeaderActions';
@@ -45,15 +45,23 @@ const dummyData: RowData[] = [
 const dummySorting: SortBy[] = [{ priority: 0, dataKey: 'ticker', order: 'ASC' }];
 
 describe('Table', () => {
-  it('should render successfully', () => {
-    const { baseElement } = render(
-      <Table config={dummyConfig} data={dummyData} sortBy={dummySorting} />,
+  it('should render with data', () => {
+    const { baseElement, getAllByTestId } = render(
+      <Table
+        config={dummyConfig}
+        data={dummyData}
+        sortBy={dummySorting}
+        onSortByChange={undefined}
+      />,
     );
     expect(baseElement).toBeTruthy();
+    expect(getAllByTestId(/_row/gi).length).toBe(dummyData.length);
   });
 
   it('should render without data', () => {
-    render(<Table config={dummyConfig} data={[]} sortBy={dummySorting} />);
-    expect(screen.getByTestId('no_data_row')).toBeTruthy();
+    const { getByTestId } = render(
+      <Table config={dummyConfig} data={[]} sortBy={dummySorting} onSortByChange={undefined} />,
+    );
+    expect(getByTestId('no_data_row')).toBeTruthy();
   });
 });

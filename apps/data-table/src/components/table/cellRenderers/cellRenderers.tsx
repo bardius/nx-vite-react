@@ -3,6 +3,7 @@ import { Text } from '@salt-ds/core';
 
 import styles from './cellRenderers.module.scss';
 
+// Cell renderer to display formatted and colored price values
 const priceCellRenderer: CellRenderer<number | undefined> = data => {
   const displayedValue =
     typeof data !== 'number'

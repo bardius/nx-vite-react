@@ -1,7 +1,7 @@
 import { assetClassComparator } from '../../../../src/components/table/comparators/sortByComparators';
-import { AssetClassData } from '../../../../src/hooks/useDummyData';
+import { FinancialInstrumentsData } from '../../../../src/hooks/useDummyData';
 
-const dummyData: AssetClassData[] = [
+const dummyData: FinancialInstrumentsData[] = [
   {
     ticker: 'ALPHA',
     price: 3150.67,

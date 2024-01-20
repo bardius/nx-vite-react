@@ -5,6 +5,8 @@
 This is of a monorepo that contains library and application examples based on
 [Nx][nx_link], [Typescript][ts_link], [ReactJs][react_link] and [Vite][vite_link].
 
+<img alt="Data Table" width="512" src="https://github.com/bardius/nx-vite-react/tree/main/screenshots/intro.png">
+
 ## Required NodeJs version
 
 Ideally, you will have [nvm][nvm_link]. In that case you will get the required version automatically if you execute:
@@ -86,7 +88,7 @@ This simple react application is using [React router][react_router_link] to serv
 [Salt Design System][salt_ds_link] by JP. Morgan is being used to provide a consistent layout and branding.
 [Ramda][ramda_link] is used as lightweight utility library.
 
-The home page contains a data table with sorting feature and dummy data.
+The home page contains a data table with sorting feature and dummy data ([FinancialInstrumentsTable][table_component_link]).
 
 The data table is reusing the [presentational components][pc_link] from the "common-ui" package, [extends/overrides][renderers] for default row/cell renderers
 via configuration and uses headless component for [multiple sorting feature][sorting_link] with preloaded sortBy values.
@@ -95,8 +97,8 @@ via configuration and uses headless component for [multiple sorting feature][sor
 
 #### Sorting feature
 
-Sorting can be applied in all columns with default or [custom sort comparator functions][comparator_link] pr columns.
-Based on configuration it can be turned on/off and pre-populate a sort by state.
+Sorting can be applied in all columns with default or [custom sort comparator functions][comparator_link] per column.
+Based on configuration it can be turned on/off, have custom comparator and pre-populate a sort by state.
 
 Multiple sorting rules can apply simultaneously.
 
@@ -155,3 +157,4 @@ Few tools have been configured and being used to improve the development experie
 [sonar_link]: https://sonarcloud.io/summary/new_code?id=bardius_nx-vite-react
 [comparator_link]: https://github.com/bardius/nx-vite-react/tree/main/apps/data-table/src/components/table/comparators
 [ramda_link]: https://ramdajs.com/
+[table_component_link]: https://github.com/bardius/nx-vite-react/tree/main/apps/data-table/components/financialInstrumentsTable
