@@ -2,7 +2,7 @@
 
 ## ![Nx](https://img.shields.io/badge/Nx-143055.svg?style=for-the-badge&logo=Nx&logoColor=white) ![Vite](https://img.shields.io/badge/Vite-646CFF.svg?style=for-the-badge&logo=Vite&logoColor=white) ![ReactJs](https://img.shields.io/badge/React-61DAFB.svg?style=for-the-badge&logo=React&logoColor=black) ![Typescript](https://img.shields.io/badge/TypeScript-3178C6.svg?style=for-the-badge&logo=TypeScript&logoColor=white) ![Jest](https://img.shields.io/badge/Jest-C21325.svg?style=for-the-badge&logo=Jest&logoColor=white) ![Stprybook](https://img.shields.io/badge/Storybook-FF4785.svg?style=for-the-badge&logo=Storybook&logoColor=white) ![Cypress](https://img.shields.io/badge/Cypress-69D3A7.svg?style=for-the-badge&logo=Cypress&logoColor=white)
 
-## ![SonarCloud](https://img.shields.io/badge/SonarCloud-F3702A.svg?style=for-the-badge&logo=SonarCloud&logoColor=white) ![Dependabot](https://img.shields.io/badge/dependabot-025E8C?style=for-the-badge&logo=dependabot&logoColor=white) ![GitHub Actions](https://img.shields.io/badge/github%20actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white) ![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-FE5196.svg?style=for-the-badge&logo=Conventional-Commits&logoColor=white)
+## ![SonarCloud](https://img.shields.io/badge/SonarCloud-F3702A.svg?style=for-the-badge&logo=SonarCloud&logoColor=white) ![Snyk](https://img.shields.io/badge/Snyk-4C4A73.svg?style=for-the-badge&logo=Snyk&logoColor=white) ![Dependabot](https://img.shields.io/badge/dependabot-025E8C?style=for-the-badge&logo=dependabot&logoColor=white) ![GitHub Actions](https://img.shields.io/badge/github%20actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white) ![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-FE5196.svg?style=for-the-badge&logo=Conventional-Commits&logoColor=white)
 
 # Nx monorepo for Vite & ReactJs
 
@@ -148,6 +148,7 @@ Storybook has been configured and a story for Table component has been created a
 Few tools have been configured and being used to improve the development experience in this project:
 
 - [SonarQube][sonar_link], code quality & SAST, additionally digests the reports from unit test and linting tools
+- [Snyk][snyk_link] vulnerability scans, [report][snyk_report_link]
 - [Jest][jest_link] & [RTL][rtl_link] to execute unit tests
 - [Husky][husky_link], pre-commit hooks in place
 - [Commitizen][cz_link] & [Commit Lint][commit_lint_link] for [conventional commits][conventional_commits_link], use "npm run commit" to get a cli wizard
@@ -207,3 +208,5 @@ Few tools have been configured and being used to improve the development experie
 [madge_link]: https://www.npmjs.com/package/madge
 [commit_lint_link]: https://commitlint.js.org
 [conventional_commits_link]: https://www.conventionalcommits.org/en/v1.0.0/
+[snyk_link]: https://snyk.io/
+[snyk_report_link]: https://app.snyk.io/org/bardius/projects?groupBy=targets&searchQuery=&sortBy=highest+severity&filters[Show]=&filters[Integrations]=&filters[CollectionIds]=&before&after
