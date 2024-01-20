@@ -37,5 +37,7 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v6
         with:
+          build: npm run build
+          start: npx serve dist/apps/data-table -p 4200
           project: ./apps/data-table-e2e
           browser: chrome
