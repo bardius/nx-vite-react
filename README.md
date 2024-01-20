@@ -113,7 +113,8 @@ The home page contains a data table with sorting feature, preloaded sorting for 
 The data table is reusing the [presentational components][pc_link] from the "common-ui" package, [extends/overrides][renderers] for default row/cell renderers
 via configuration and uses headless component for [multiple sorting feature][sorting_link] with preloaded sortBy values.
 
-[Screenshot][app_ss_link]
+- [Screenshot][app_ss_link]
+- [Source code graph][app_graph_link]
 
 #### Sorting feature
 
@@ -135,7 +136,8 @@ Additional styling has been done with [Sass][sass_link].
 
 Storybook has been configured and a story for Table component has been created as sample.
 
-[Storybook Screenshot][storybook_ss_link]
+- [Storybook Screenshot][storybook_ss_link]
+- [Source code graph][common_ui_graph_link]
 
 ## DX tooling
 
@@ -157,6 +159,7 @@ Few tools have been configured and being used to improve the development experie
 - [Browserslist][browserlist_link] to define build target compatibility
 - [WDYR][wdyr_link] (why did you render), to debug excessive re-renders
 - [Typescript][ts_link] for type safe coding
+- [Madge][madge_link] to check for circular dependencies and generate code graphs
 
 <!----variables---->
 
@@ -165,6 +168,8 @@ Few tools have been configured and being used to improve the development experie
 [salt_ds_link]: https://www.saltdesignsystem.com/salt/index
 [app_ss_link]: https://github.com/bardius/nx-vite-react/tree/main/screenshots/data-table-app-home.png
 [storybook_ss_link]: https://github.com/bardius/nx-vite-react/tree/main/screenshots/common-ui-storybook.png
+[app_graph_link]: https://github.com/bardius/nx-vite-react/tree/main/screenshots/data-table-app-graph.svg
+[common_ui_graph_link]: https://github.com/bardius/nx-vite-react/tree/main/screenshots/common-ui-graph.svg
 [common_ui_link]: https://github.com/bardius/nx-vite-react/tree/main/libs/common-ui
 [data_table_link]: https://github.com/bardius/nx-vite-react/tree/main/apps/data-table
 [sass_link]: https://sass-lang.com/
@@ -195,3 +200,4 @@ Few tools have been configured and being used to improve the development experie
 [husky_link]: https://typicode.github.io/husky/
 [jest_link]: https://jestjs.io/
 [rtl_link]: https://testing-library.com/docs/react-testing-library/intro/
+[madge_link]: https://www.npmjs.com/package/madge
