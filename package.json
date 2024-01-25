@@ -55,7 +55,8 @@
     "react-dom": "18.2.0",
     "react-error-boundary": "^4.0.12",
     "react-router-dom": "^6.21.2",
-    "tslib": "^2.3.0"
+    "tslib": "^2.3.0",
+    "typesafe-actions": "^5.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.14.5",
