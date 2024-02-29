@@ -47,7 +47,7 @@
     "@salt-ds/core": "^1.13.4",
     "@salt-ds/icons": "^1.9.1",
     "@salt-ds/lab": "^1.0.0-alpha.26",
-    "@salt-ds/theme": "^1.11.0",
+    "@salt-ds/theme": "^1.11.1",
     "@swc/helpers": "~0.5.2",
     "msw": "^2.0.14",
     "ramda": "^0.29.1",
