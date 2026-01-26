@@ -35,7 +35,7 @@ jobs:
           npm run setup:ci
 
       - name: Cypress run
-        uses: cypress-io/github-action@v6
+        uses: cypress-io/github-action@v7
         with:
           build: npm run build
           start: npx serve dist/apps/data-table -p 4200
